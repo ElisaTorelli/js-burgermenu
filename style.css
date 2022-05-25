@@ -31,41 +31,19 @@ a{
     padding: 16px 24px;
 }
 
-/*************** MEDIA QUERIES (max width 768px)***************/
-@media all and (max-width: 768px) {
-    .nav-menu{
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        flex-direction: column;
-        background-color: aquamarine;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-    }
-    
-    .nav-item{
-        margin: 40px 0;
-    }
-    
-    .hamburger-menu{
-        display: block;
-        cursor: pointer;
-    }
-    
-    /* TO CREATE BAR EFFECT */
-    .hamburger-menu.active .hamburger-bar:nth-child(2){
-        opacity: 0;
-    }
-    .hamburger-menu.active .hamburger-bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-menu.active .hamburger-bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    }
+/* HAMBURGER BARS */
+.hamburger-menu{
+    display: none;
 }
 
+.hamburger-bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3 ease-in-out;
+    background-color: rgb(11, 61, 68);
+}
 
 /* FULL-WIDTH NAVBAR */
 .nav-menu{
@@ -94,16 +72,43 @@ a{
     color: rgb(107, 88, 160);
 }
 
-/* HAMBURGER BARS */
-.hamburger-menu{
-    display: none;
-}
+/*************** MEDIA QUERIES (max width 768px)***************/
+@media all and (max-width: 768px) {
+    .nav-menu{
+        display: none;
+        flex-direction: row;
+        background-color: rgb(165, 235, 219);
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
 
-.hamburger-bar{
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3 ease-in-out;
-    background-color: rgb(11, 61, 68);
+    .nav-menu-active{
+        display: block;
+    }
+    
+    .nav-item{
+        margin: 40px 0;
+    }
+    
+    .hamburger-menu{
+        display: block;
+        cursor: pointer;
+    }
+
+    .header{
+        border-bottom: 1px solid rgb(207, 191, 223);
+    }
+    
+    /* TO CREATE BAR EFFECT */
+    .hamburger-menu.active .hamburger-bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger-menu.active .hamburger-bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .hamburger-bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
