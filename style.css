@@ -1,0 +1,109 @@
+/* GENERAL SETTINGS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+
+body{
+    background-color: rgb(207, 191, 223);
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* HEADER STYLE SETTINGS */
+.header{
+    border-bottom: 1px solid rgb(107, 88, 160);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+/*************** MEDIA QUERIES (max width 768px)***************/
+@media all and (max-width: 768px) {
+    .nav-menu{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background-color: aquamarine;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
+    
+    .nav-item{
+        margin: 40px 0;
+    }
+    
+    .hamburger-menu{
+        display: block;
+        cursor: pointer;
+    }
+    
+    /* TO CREATE BAR EFFECT */
+    .hamburger-menu.active .hamburger-bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger-menu.active .hamburger-bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .hamburger-bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* FULL-WIDTH NAVBAR */
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item{
+    margin-left: 80px;
+}
+
+.nav-link{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(107, 88, 160);
+}
+
+.nav-link:hover{
+    color: rgb(11, 61, 68);
+}
+
+.nav-logo{
+    font-weight: 500;
+    font-size: 24px;
+    color: rgb(107, 88, 160);
+}
+
+/* HAMBURGER BARS */
+.hamburger-menu{
+    display: none;
+}
+
+.hamburger-bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3 ease-in-out;
+    background-color: rgb(11, 61, 68);
+}
